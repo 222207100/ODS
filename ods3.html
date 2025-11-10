@@ -51,6 +51,23 @@ ul li{margin-bottom:10px}
 .site-footer{width:100%;background:var(--footer-bg);padding:12px 0;color:var(--muted);font-size:0.95em;margin-top: 24px}
 .site-footer .container{max-width:1000px;margin:0 auto;padding:12px 18px;text-align:center}
 .site-footer code{background:transparent;padding:2px 6px;border-radius:4px;font-size:0.92em}
+  
+  .section-block{display:flex;gap:18px;align-items:flex-start;margin:12px 0 18px}
+  .section-block.img-left{flex-direction:row}        /* imagen a la izquierda */
+  .section-block.img-right{flex-direction:row}/* imagen a la derecha */
+.section-media{width:200px;min-width:200px;height:200px;overflow:hidden;border-radius:6px;flex-shrink:0}
+.section-media img{width:100%;height:100%;object-fit:cover;display:block}
+.section-content{flex:1}
+
+  /* Horizontal divider used between activity sections */
+  .divider{height:2px;background:#e0e0e0;border:0;margin:20px 0}
+
+/* responsive: apilar en pantallas pequeñas y mantener imagen cuadrada */
+@media(max-width:700px){
+  .section-block{flex-direction:column}
+  .section-media{width:90%;min-width:auto;height:auto;margin:0 auto}
+  .section-media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+}
   </style>
 </head>
 <body>
@@ -69,27 +86,52 @@ ul li{margin-bottom:10px}
     <a class="nav-arrow nav-next" href="ods4.html" aria-label="Siguiente ODS">›</a>
   </div>
   <p style="text-align:center"><strong>Garantizar una vida sana y promover el bienestar para todos en todas las edades.</strong></p>
+ 
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades individuales</h2>
+    <ul>
+      <li>Mantener hábitos saludables: ejercicio regular, dieta equilibrada y revisiones médicas periódicas.</li>
+      <li>Vacunarse y seguir recomendaciones de salud pública.</li>
+      <li>Cuidar la salud mental: buscar apoyo, practicar técnicas de reducción de estrés.</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <img src="imagen6.png" alt="Actividades individuales">
+  </div>
+</div>
 
-      <h2>Actividades individuales</h2>
-      <ul>
-        <li>Mantener hábitos saludables: ejercicio regular, dieta equilibrada y revisiones médicas periódicas.</li>
-        <li>Vacunarse y seguir recomendaciones de salud pública.</li>
-        <li>Cuidar la salud mental: buscar apoyo, practicar técnicas de reducción de estrés.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
 
-      <h2>Actividades escolares</h2>
-      <ul>
-        <li>Programas de educación en salud, higiene y salud mental para estudiantes y familias.</li>
-        <li>Jornadas de vacunación y revisiones dentales / visuales en colaboración con la comunidad sanitaria.</li>
-        <li>Actividades deportivas regulares y recreación saludable en la jornada escolar.</li>
-      </ul>
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades escolares</h2>
+    <ul>
+      <li>Programas de educación en salud, higiene y salud mental para estudiantes y familias.</li>
+      <li>Jornadas de vacunación y revisiones dentales / visuales en colaboración con la comunidad sanitaria.</li>
+      <li>Actividades deportivas regulares y recreación saludable en la jornada escolar.</li>
+    </ul>
+  </div>
+    <div class="section-media">
+    <img src="imagen7.png" alt="Actividades escolares">
+  </div>
+</div>
 
-      <h2>Actividades empresariales</h2>
-      <ul>
-        <li>Ofrecer seguros de salud, programas de bienestar y pausas activas para empleados.</li>
-        <li>Implementar políticas de seguridad y salud en el trabajo; promover ambientes libres de acoso.</li>
-        <li>Financiar campañas de salud comunitaria y apoyar centros de salud locales.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
+
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades empresariales</h2>
+    <ul>
+      <li>Ofrecer seguros de salud, programas de bienestar y pausas activas para empleados.</li>
+      <li>Implementar políticas de seguridad y salud en el trabajo; promover ambientes libres de acoso.</li>
+      <li>Financiar campañas de salud comunitaria y apoyar centros de salud locales.</li>
+    </ul>
+  </div>
+  <!-- <div class="section-media">
+    <img src="imagen7.png" alt="Actividades empresariales">
+  </div> -->
+</div>
 
   <a class="back" href="index.html">← Volver al inicio</a>
     </article>

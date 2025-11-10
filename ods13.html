@@ -51,6 +51,23 @@ ul li{margin-bottom:10px}
 .site-footer{width:100%;background:var(--footer-bg);padding:12px 0;color:var(--muted);font-size:0.95em;margin-top: 24px}
 .site-footer .container{max-width:1000px;margin:0 auto;padding:12px 18px;text-align:center}
 .site-footer code{background:transparent;padding:2px 6px;border-radius:4px;font-size:0.92em}
+  
+  .section-block{display:flex;gap:18px;align-items:flex-start;margin:12px 0 18px}
+  .section-block.img-left{flex-direction:row}        /* imagen a la izquierda */
+  .section-block.img-right{flex-direction:row}/* imagen a la derecha */
+.section-media{width:200px;min-width:200px;height:200px;overflow:hidden;border-radius:6px;flex-shrink:0}
+.section-media img{width:100%;height:100%;object-fit:cover;display:block}
+.section-content{flex:1}
+
+  /* Horizontal divider used between activity sections */
+  .divider{height:2px;background:#e0e0e0;border:0;margin:20px 0}
+
+/* responsive: apilar en pantallas pequeñas y mantener imagen cuadrada */
+@media(max-width:700px){
+  .section-block{flex-direction:column}
+  .section-media{width:90%;min-width:auto;height:auto;margin:0 auto}
+  .section-media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+}
   </style>
 </head>
 <body>
@@ -69,27 +86,52 @@ ul li{margin-bottom:10px}
     <a class="nav-arrow nav-next" href="ods14.html" aria-label="Siguiente ODS">›</a>
   </div>
   <p style="text-align:center"><strong>Tomar medidas urgentes para combatir el cambio climático y sus efectos mediante mitigación, adaptación y resiliencia.</strong></p>
+ 
+<div class="section-block img-left">
+  <div class="section-media">
+    <img src="imagen26.png" alt="Actividades individuales">
+  </div>
+  <div class="section-content">
+    <h2>Actividades individuales</h2>
+    <ul>
+      <li>Reducir emisiones personales: transporte sostenible, menor consumo energético y dieta baja en huella (priorizar alimentos de origen vegetal, reducir consumo de carne roja y ultraprocesados, preferir productos locales/estacionales y minimizar el desperdicio).</li>
+      <li>Plantar árboles y participar en actividades locales de conservación.</li>
+      <li>Informarse y apoyar políticas climáticas locales y nacionales.</li>
+    </ul>
+  </div>
+</div>
 
-      <h2>Actividades individuales</h2>
-      <ul>
-        <li>Reducir emisiones personales: transporte sostenible, menor consumo energético y dieta baja en huella (priorizar alimentos de origen vegetal, reducir consumo de carne roja y ultraprocesados, preferir productos locales/estacionales y minimizar el desperdicio).</li>
-        <li>Plantar árboles y participar en actividades locales de conservación.</li>
-        <li>Informarse y apoyar políticas climáticas locales y nacionales.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
 
-      <h2>Actividades escolares</h2>
-      <ul>
-        <li>Integrar educación climática en el currículo y realizar proyectos de reducción de emisiones.</li>
-        <li>Monitoreo escolar de consumo energético y programas de eficiencia.</li>
-        <li>Simulacros y planes de adaptación escolar ante eventos climáticos extremos.</li>
-      </ul>
+<div class="section-block img-left">
+  <!-- <div class="section-media">
+    <img src="imagen1.png" alt="Actividades escolares">
+  </div> -->
+  <div class="section-content">
+    <h2>Actividades escolares</h2>
+    <ul>
+      <li>Integrar educación climática en el currículo y realizar proyectos de reducción de emisiones.</li>
+      <li>Monitoreo escolar de consumo energético y programas de eficiencia.</li>
+      <li>Simulacros y planes de adaptación escolar ante eventos climáticos extremos.</li>
+    </ul>
+  </div>
+</div>
 
-      <h2>Actividades empresariales</h2>
-      <ul>
-        <li>Establecer objetivos de reducción de emisiones (net-zero) y reportar progreso.</li>
-        <li>Invertir en adaptación climática para instalaciones y cadenas de suministro.</li>
-        <li>Diseñar productos y servicios compatibles con una economía baja en carbono.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
+
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades empresariales</h2>
+    <ul>
+      <li>Establecer objetivos de reducción de emisiones (net-zero) y reportar progreso.</li>
+      <li>Invertir en adaptación climática para instalaciones y cadenas de suministro.</li>
+      <li>Diseñar productos y servicios compatibles con una economía baja en carbono.</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <img src="imagen27.png" alt="Actividades empresariales">
+  </div>
+</div>
 
   <a class="back" href="index.html">← Volver al inicio</a>
     </article>

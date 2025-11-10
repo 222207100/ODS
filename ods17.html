@@ -51,6 +51,23 @@ ul li{margin-bottom:10px}
 .site-footer{width:100%;background:var(--footer-bg);padding:12px 0;color:var(--muted);font-size:0.95em;margin-top: 24px}
 .site-footer .container{max-width:1000px;margin:0 auto;padding:12px 18px;text-align:center}
 .site-footer code{background:transparent;padding:2px 6px;border-radius:4px;font-size:0.92em}
+  
+  .section-block{display:flex;gap:18px;align-items:flex-start;margin:12px 0 18px}
+  .section-block.img-left{flex-direction:row}        /* imagen a la izquierda */
+  .section-block.img-right{flex-direction:row}/* imagen a la derecha */
+.section-media{width:200px;min-width:200px;height:200px;overflow:hidden;border-radius:6px;flex-shrink:0}
+.section-media img{width:100%;height:100%;object-fit:cover;display:block}
+.section-content{flex:1}
+
+  /* Horizontal divider used between activity sections */
+  .divider{height:2px;background:#e0e0e0;border:0;margin:20px 0}
+
+/* responsive: apilar en pantallas pequeñas y mantener imagen cuadrada */
+@media(max-width:700px){
+  .section-block{flex-direction:column}
+  .section-media{width:90%;min-width:auto;height:auto;margin:0 auto}
+  .section-media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+}
   </style>
 </head>
 <body>
@@ -69,27 +86,52 @@ ul li{margin-bottom:10px}
     <!-- No next link for last ODS -->
   </div>
   <p style="text-align:center"><strong>Fortalecer los medios de implementación y revitalizar la alianza global para el desarrollo sostenible.</strong></p>
+ 
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades individuales</h2>
+    <ul>
+      <li>Colaborar con organizaciones locales y participar en redes comunitarias.</li>
+      <li>Promover la cooperación entre diferentes grupos y actores locales.</li>
+      <li>Compartir conocimientos y recursos para proyectos sostenibles en la comunidad.</li>
+    </ul>
+  </div>
+  <!-- <div class="section-media">
+    <img src="imagen1.png" alt="Actividades individuales">
+  </div> -->
+</div>
 
-      <h2>Actividades individuales</h2>
-      <ul>
-        <li>Colaborar con organizaciones locales y participar en redes comunitarias.</li>
-        <li>Promover la cooperación entre diferentes grupos y actores locales.</li>
-        <li>Compartir conocimientos y recursos para proyectos sostenibles en la comunidad.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
 
-      <h2>Actividades escolares</h2>
-      <ul>
-        <li>Crear alianzas entre escuelas, ONGs y empresas para proyectos educativos y ambientales.</li>
-        <li>Programas de intercambio y cooperación con otras escuelas para compartir buenas prácticas.</li>
-        <li>Convocar ferias de colaboración donde estudiantes presenten proyectos comunitarios.</li>
-      </ul>
+<div class="section-block img-left">
+  <div class="section-media">
+    <img src="imagen34.png" alt="Actividades escolares">
+  </div>
+  <div class="section-content">
+    <h2>Actividades escolares</h2>
+    <ul>
+      <li>Crear alianzas entre escuelas, ONGs y empresas para proyectos educativos y ambientales.</li>
+      <li>Programas de intercambio y cooperación con otras escuelas para compartir buenas prácticas.</li>
+      <li>Convocar ferias de colaboración donde estudiantes presenten proyectos comunitarios.</li>
+    </ul>
+  </div>
+</div>
 
-      <h2>Actividades empresariales</h2>
-      <ul>
-        <li>Participar en alianzas público-privadas para proyectos de impacto social y ambiental.</li>
-        <li>Compartir tecnología y conocimientos con proveedores y comunidades locales.</li>
-        <li>Reportar impacto y colaborar en estándares industriales para la sostenibilidad.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
+
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades empresariales</h2>
+    <ul>
+      <li>Participar en alianzas público-privadas para proyectos de impacto social y ambiental.</li>
+      <li>Compartir tecnología y conocimientos con proveedores y comunidades locales.</li>
+      <li>Reportar impacto y colaborar en estándares industriales para la sostenibilidad.</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <img src="imagen35.png" alt="Actividades empresariales">
+  </div>
+</div>
 
   <a class="back" href="index.html">← Volver al inicio</a>
     </article>

@@ -51,6 +51,23 @@ ul li{margin-bottom:10px}
 .site-footer{width:100%;background:var(--footer-bg);padding:12px 0;color:var(--muted);font-size:0.95em;margin-top: 24px}
 .site-footer .container{max-width:1000px;margin:0 auto;padding:12px 18px;text-align:center}
 .site-footer code{background:transparent;padding:2px 6px;border-radius:4px;font-size:0.92em}
+  
+  .section-block{display:flex;gap:18px;align-items:flex-start;margin:12px 0 18px}
+  .section-block.img-left{flex-direction:row}        /* imagen a la izquierda */
+  .section-block.img-right{flex-direction:row}/* imagen a la derecha */
+.section-media{width:200px;min-width:200px;height:200px;overflow:hidden;border-radius:6px;flex-shrink:0}
+.section-media img{width:100%;height:100%;object-fit:cover;display:block}
+.section-content{flex:1}
+
+  /* Horizontal divider used between activity sections */
+  .divider{height:2px;background:#e0e0e0;border:0;margin:20px 0}
+
+/* responsive: apilar en pantallas pequeñas y mantener imagen cuadrada */
+@media(max-width:700px){
+  .section-block{flex-direction:column}
+  .section-media{width:90%;min-width:auto;height:auto;margin:0 auto}
+  .section-media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+}
   </style>
 </head>
 <body>
@@ -71,26 +88,51 @@ ul li{margin-bottom:10px}
   </div>
   <p style="text-align:center"><strong>Erradicar la pobreza en todas sus formas para todas las personas y reducir la proporción de hombres, mujeres y niños que viven en situación de pobreza extrema.</strong></p>
 
-      <h2>Actividades individuales</h2>
-      <ul>
-        <li>Donar ropa, alimentos o tiempo a organizaciones locales que apoyen a personas en situación de vulnerabilidad.</li>
-        <li>Ahorrar y planificar finanzas personales; participar en microfinanzas o cooperativas locales.</li>
-        <li>Apoyar políticas públicas locales a favor de la protección social (firmar peticiones, participar en consultas).</li>
-      </ul>
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades individuales</h2>
+    <ul>
+      <li>Donar ropa, alimentos o tiempo a organizaciones locales que apoyen a personas en situación de vulnerabilidad.</li>
+      <li>Ahorrar y planificar finanzas personales; participar en microfinanzas o cooperativas locales.</li>
+      <li>Apoyar políticas públicas locales a favor de la protección social (firmar peticiones, participar en consultas).</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <img src="imagen2.png" alt="Actividades individuales">
+  </div>
+</div>
 
-      <h2>Actividades escolares</h2>
-      <ul>
-        <li>Organizar campañas de recolección de alimentos y ropa para familias necesitadas.</li>
-        <li>Incluir en el currículo proyectos de emprendimiento social para apoyar a comunidades vulnerables.</li>
-        <li>Crear programas de tutoría entre estudiantes para apoyar el rendimiento y reducir abandono escolar.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
 
-      <h2>Actividades empresariales</h2>
-      <ul>
-        <li>Implementar programas de responsabilidad social que financien iniciativas contra la pobreza.</li>
-        <li>Contratar y capacitar a personas en situación de vulnerabilidad mediante programas de inclusión laboral.</li>
-        <li>Establecer cadenas de suministro responsables que paguen salarios justos a proveedores locales.</li>
-      </ul>
+<div class="section-block img-left">
+  <div class="section-media">
+    <img src="imagen3.png" alt="Actividades escolares">
+  </div>
+  <div class="section-content">
+    <h2>Actividades escolares</h2>
+    <ul>
+      <li>Organizar campañas de recolección de alimentos y ropa para familias necesitadas.</li>
+      <li>Incluir en el currículo proyectos de emprendimiento social para apoyar a comunidades vulnerables.</li>
+      <li>Crear programas de tutoría entre estudiantes para apoyar el rendimiento y reducir abandono escolar.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider" aria-hidden="true"></div>
+
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades empresariales</h2>
+    <ul>
+      <li>Implementar programas de responsabilidad social que financien iniciativas contra la pobreza.</li>
+      <li>Contratar y capacitar a personas en situación de vulnerabilidad mediante programas de inclusión laboral.</li>
+      <li>Establecer cadenas de suministro responsables que paguen salarios justos a proveedores locales.</li>
+    </ul>
+  </div>
+  <!-- <div class="section-media">
+    <img src="imagen1.png" alt="Actividades empresariales">
+  </div> -->
+</div>
 
   <a class="back" href="index.html">← Volver al inicio</a>
     </article>

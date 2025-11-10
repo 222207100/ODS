@@ -51,6 +51,23 @@ ul li{margin-bottom:10px}
 .site-footer{width:100%;background:var(--footer-bg);padding:12px 0;color:var(--muted);font-size:0.95em;margin-top: 24px}
 .site-footer .container{max-width:1000px;margin:0 auto;padding:12px 18px;text-align:center}
 .site-footer code{background:transparent;padding:2px 6px;border-radius:4px;font-size:0.92em}
+  
+  .section-block{display:flex;gap:18px;align-items:flex-start;margin:12px 0 18px}
+  .section-block.img-left{flex-direction:row}        /* imagen a la izquierda */
+  .section-block.img-right{flex-direction:row}/* imagen a la derecha */
+.section-media{width:200px;min-width:200px;height:200px;overflow:hidden;border-radius:6px;flex-shrink:0}
+.section-media img{width:100%;height:100%;object-fit:cover;display:block}
+.section-content{flex:1}
+
+  /* Horizontal divider used between activity sections */
+  .divider{height:2px;background:#e0e0e0;border:0;margin:20px 0}
+
+/* responsive: apilar en pantallas pequeñas y mantener imagen cuadrada */
+@media(max-width:700px){
+  .section-block{flex-direction:column}
+  .section-media{width:90%;min-width:auto;height:auto;margin:0 auto}
+  .section-media img{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover}
+}
   </style>
 </head>
 <body>
@@ -69,27 +86,52 @@ ul li{margin-bottom:10px}
     <a class="nav-arrow nav-next" href="ods17.html" aria-label="Siguiente ODS">›</a>
   </div>
   <p style="text-align:center"><strong>Promover sociedades pacíficas e inclusivas, garantizar el acceso a la justicia y construir instituciones eficaces, responsables e inclusivas a todos los niveles.</strong></p>
+ 
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades individuales</h2>
+    <ul>
+      <li>Participar en iniciativas comunitarias de resolución pacífica de conflictos y voluntariado.</li>
+      <li>Denunciar corrupción y apoyar transparencia en la vida pública.</li>
+      <li>Fomentar el respeto a los derechos humanos y la inclusión en el entorno local.</li>
+    </ul>
+  </div>
+  <!-- <div class="section-media">
+    <img src="imagen1.png" alt="Actividades individuales">
+  </div> -->
+</div>
 
-      <h2>Actividades individuales</h2>
-      <ul>
-        <li>Participar en iniciativas comunitarias de resolución pacífica de conflictos y voluntariado.</li>
-        <li>Denunciar corrupción y apoyar transparencia en la vida pública.</li>
-        <li>Fomentar el respeto a los derechos humanos y la inclusión en el entorno local.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
 
-      <h2>Actividades escolares</h2>
-      <ul>
-        <li>Programas de educación en valores, derechos humanos y civismo.</li>
-        <li>Simulaciones de juicios y parlamentos escolares para enseñar procesos democráticos.</li>
-        <li>Políticas escolares contra el acoso y para la protección de la infancia.</li>
-      </ul>
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades escolares</h2>
+    <ul>
+      <li>Programas de educación en valores, derechos humanos y civismo.</li>
+      <li>Simulaciones de juicios y parlamentos escolares para enseñar procesos democráticos.</li>
+      <li>Políticas escolares contra el acoso y para la protección de la infancia.</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <img src="imagen32.png" alt="Actividades escolares">
+  </div>
+</div>
 
-      <h2>Actividades empresariales</h2>
-      <ul>
-        <li>Implementar políticas de ética, transparencia y cumplimiento normativo.</li>
-        <li>Apoyar el estado de derecho mediante prácticas responsables en la cadena de suministro.</li>
-        <li>Promover la diversidad, la inclusión y la protección de los derechos laborales.</li>
-      </ul>
+<div class="divider" aria-hidden="true"></div>
+
+<div class="section-block img-right">
+  <div class="section-content">
+    <h2>Actividades empresariales</h2>
+    <ul>
+      <li>Implementar políticas de ética, transparencia y cumplimiento normativo.</li>
+      <li>Apoyar el estado de derecho mediante prácticas responsables en la cadena de suministro.</li>
+      <li>Promover la diversidad, la inclusión y la protección de los derechos laborales.</li>
+    </ul>
+  </div>
+  <div class="section-media">
+    <img src="imagen33.png" alt="Actividades empresariales">
+  </div>
+</div>
 
   <a class="back" href="index.html">← Volver al inicio</a>
     </article>
