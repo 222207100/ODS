@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Introducción a los ODS</title>
+  <style>
+    :root{--bg:#f7f9fb;--card:#ffffff;--accent:#0b6d44;--muted:#444;--header-color:#6bbde6;--footer-bg:#e1e9ef}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:var(--bg);color:#111;margin:0;padding:0}
+    header{background:var(--header-color);color:#fff;padding:18px 20px}
+    nav{display:flex;gap:12px;align-items:center;max-width:1000px;margin:0 auto}
+    nav a{color:#fff;text-decoration:none;font-weight:600}
+    main{max-width:1000px;margin:22px auto;padding:0 18px}
+  /* Card: la imagen de portada ocupará la parte superior; el contenido va en .card-body */
+  section.card{background:var(--card);padding:0;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.06);margin-bottom:16px;overflow:hidden}
+  /* Constrain standalone cards (como la de Enlaces) al mismo ancho que el main */
+  .card.constrained{max-width:1000px;margin:0 auto}
+  .card-hero img{width:100%;height:150px;object-fit:cover;display:block}
+  .card-body{padding:24px}
+    /* Encabezados con más separación para mejorar lectura dentro del card */
+  h1{margin:0 0 14px 0;font-size:1.6em}
+  h2{margin:18px 0 12px 0;font-size:1.15em}
+  /* Para el título de la card 'Enlaces útiles' queremos quitar el margin-top */
+  #enlaces-title{margin-top:0}
+  /* También asegurar que si el h2 no tiene id (ediciones manuales), el selector por sección se aplique */
+  #enlaces h2{margin-top:0}
+    /* Párrafos y listas con más espacio y mejor interlineado */
+    p{margin:12px 0;color:var(--muted);line-height:1.6}
+    ul{margin:12px 0 0 1.1em;color:var(--muted)}
+    ul li{margin-bottom:10px}
+  .divider{height:2px;background:#e0e0e0;border:0;margin:20px 0}
+  /* Footer: full width bar with a slightly darker background and centered text */
+  .site-footer{width:100%;background:var(--footer-bg);padding:12px 0;color:var(--muted);font-size:0.95em;margin-top: 24px;}
+  .site-footer .container{max-width:1000px;margin:0 auto;padding:12px 18px;text-align:center}
+    .links a{color:var(--accent);text-decoration:none}
+    /* Ajuste pequeño para la cuadricula dentro del card */
+    .ods-grid{margin-top:14px}
+  .audience{margin-top:18px}
+    /* Objective block: image at the side (left) */
+    .objective{display:flex;gap:24px;align-items:flex-start}
+    .objective-text{flex:1}
+    .objective-img{width:300px;height:300px;object-fit:cover;border-radius:6px;flex:0 0 300px}
+    @media(max-width:700px){.objective{flex-direction:column}.objective-img{width:100%;height:auto;max-height:400px;flex:none}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <strong>Objetivos de Desarrollo Sostenible</strong>
+      <div style="flex:1"></div>
+      <a href="#inicio">Inicio</a>
+      <a href="#enlaces">Objetivos</a>
+    </nav>
+  </header>
+
+  <main>
+    <style>
+  /* Grid -> Flex switch: 5 items per row; last row (e.g. 2 items) will be centered */
+  .ods-grid{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;justify-content:center}
+  /* Use percentage widths (20%) so five tiles fit per row; subtract small px to account for gaps */
+  .ods-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;text-decoration:none;color:#fff;padding:14px;border-radius:8px;font-weight:700;font-size:16px;min-height:84px;flex:0 0 calc(20% - 9.6px);max-width:calc(20% - 9.6px);box-sizing:border-box;transition:transform 180ms ease, box-shadow 180ms ease;will-change:transform}
+  .ods-tile .icon{font-size:28px;display:block;margin-bottom:8px;line-height:1}
+  .ods-tile span{font-weight:600;font-size:12px;margin-top:6px}
+  /* Hover/focus effect: grow slightly and lift with shadow */
+  .ods-tile:hover,.ods-tile:focus-within{transform:translateY(-6px) scale(1.04);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+  /* Keyboard accessibility: visible focus */
+  .ods-tile:focus-visible{outline:3px solid rgba(255,255,255,0.25);outline-offset:4px}
+      /* approximate ODS colors */
+      .ods-1{background:#e5243b}
+      .ods-2{background:#dda63a}
+      .ods-3{background:#4c9f38}
+      .ods-4{background:#c5192d}
+      .ods-5{background:#ff3a21}
+      .ods-6{background:#26bde2}
+      .ods-7{background:#f2b705}
+      .ods-8{background:#a21942}
+      .ods-9{background:#f07a25}
+      .ods-10{background:#c51162}
+      .ods-11{background:#f26c21}
+      .ods-12{background:#8a5a2b}
+      .ods-13{background:#3f7e44}
+      .ods-14{background:#0a97d9}
+      .ods-15{background:#56c02b}
+      .ods-16{background:#00689d}
+      .ods-17{background:#19486a}
+      /* Responsiveness: 4 / 3 / 2 columns using percentages */
+      @media(max-width:1100px){.ods-tile{flex:0 0 calc(25% - 9px);max-width:calc(25% - 9px)}}
+      @media(max-width:800px){.ods-tile{flex:0 0 calc(33.3333% - 8px);max-width:calc(33.3333% - 8px)}}
+      @media(max-width:520px){.ods-tile{flex:0 0 calc(50% - 6px);max-width:calc(50% - 6px)}}
+    </style>
+      <section id="inicio" class="card">
+      <div class="card-hero"><img src="portada.jpg" alt="Imagen de portada"></div>
+      <div class="card-body">
+      <h1>Objetivos de Desarrollo Sostenible</h1>
+      <p>Esta página presenta de manera clara y práctica los 17 Objetivos de Desarrollo Sostenible (ODS). Su propósito es ayudar a comprender cada objetivo y ofrecer acciones concretas que pueden aplicar personas, escuelas y empresas desde hoy.</p>
+      <ul>
+        <li>Fichas breves por ODS con su propósito esencial.</li>
+        <li>Actividades prácticas clasificadas para individuos, centros escolares y empresas.</li>
+        <li>Ideas escalables: desde acciones personales hasta proyectos institucionales.</li>
+      </ul>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="objective">
+        <img class="objective-img" src="imagen1.jpg" alt="Imagen relacionada con los ODS">
+        <div class="objective-text">
+          <h1>Objetivo</h1>
+          <p>Los 17 Objetivos de Desarrollo Sostenible (ODS) son una agenda global para construir un mundo más justo, sano y sostenible para las personas y el planeta. Esta página ofrece una guía clara y práctica sobre cada ODS: una breve explicación del objetivo y tres acciones concretas que pueden llevar a cabo individuos, centros escolares y empresas para contribuir de inmediato.</p>
+
+          <p><strong>Propósito del sitio:</strong> Dar a conocer los ODS de forma clara y útil y ofrecer acciones concretas que cualquier persona, escuela o empresa pueda aplicar desde hoy. No se trata sólo de explicar los objetivos: aquí encontrarás ideas prácticas, sencillas y escalables que transforman la teoría en iniciativas reales, desde hábitos personales hasta proyectos escolares y políticas empresariales.</p>
+
+          <!-- '¿A quién va dirigido?' se mostrará debajo del bloque .objective (separado de la imagen) -->
+        </div>
+      </div>
+
+      <div class="audience" aria-labelledby="audience-title">
+        <h2 id="audience-title">¿A quién va dirigido?</h2>
+        <ul>
+          <li>Escuelas: recursos para proyectos didácticos, huertos, campañas y actividades en aula.</li>
+          <li>Empresas: acciones internas, políticas sostenibles y alianzas con la comunidad.</li>
+          <li>Individuos: hábitos diarios, participación comunitaria y apoyo a iniciativas locales.</li>
+        </ul>
+      </div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section id="enlaces" >
+        <h1>Explorar los objetivos</h1>
+        <div class="ods-grid">
+          <a class="ods-tile ods-1" href="../ods/ods1.html" title="ODS 1 - Fin de la pobreza"><span class="icon" aria-hidden="true">🏚️</span><span>Fin de la pobreza</span></a>
+          <a class="ods-tile ods-2" href="../ods/ods2.html" title="ODS 2 - Hambre cero"><span class="icon" aria-hidden="true">🍎</span><span>Hambre cero</span></a>
+          <a class="ods-tile ods-3" href="../ods/ods3.html" title="ODS 3 - Salud y bienestar"><span class="icon" aria-hidden="true">🩺</span><span>Salud y bienestar</span></a>
+          <a class="ods-tile ods-4" href="../ods/ods4.html" title="ODS 4 - Educación de calidad"><span class="icon" aria-hidden="true">🎓</span><span>Educación de calidad</span></a>
+          <a class="ods-tile ods-5" href="../ods/ods5.html" title="ODS 5 - Igualdad de género"><span class="icon" aria-hidden="true">♀️</span><span>Igualdad de género</span></a>
+          <a class="ods-tile ods-6" href="../ods/ods6.html" title="ODS 6 - Agua limpia y saneamiento"><span class="icon" aria-hidden="true">🚰</span><span>Agua y saneamiento</span></a>
+          <a class="ods-tile ods-7" href="../ods/ods7.html" title="ODS 7 - Energía asequible"><span class="icon" aria-hidden="true">⚡</span><span>Energía asequible</span></a>
+          <a class="ods-tile ods-8" href="../ods/ods8.html" title="ODS 8 - Trabajo decente"><span class="icon" aria-hidden="true">💼</span><span>Trabajo decente</span></a>
+          <a class="ods-tile ods-9" href="../ods/ods9.html" title="ODS 9 - Industria, innovación e infraestructura"><span class="icon" aria-hidden="true">🏗️</span><span>Industria e innovación</span></a>
+          <a class="ods-tile ods-10" href="../ods/ods10.html" title="ODS 10 - Reducción de las desigualdades"><span class="icon" aria-hidden="true">🤝</span><span>Reducción desigualdades</span></a>
+          <a class="ods-tile ods-11" href="../ods/ods11.html" title="ODS 11 - Ciudades sostenibles"><span class="icon" aria-hidden="true">🏙️</span><span>Ciudades sostenibles</span></a>
+          <a class="ods-tile ods-12" href="../ods/ods12.html" title="ODS 12 - Producción y consumo responsables"><span class="icon" aria-hidden="true">♻️</span><span>Producción y consumo</span></a>
+          <a class="ods-tile ods-13" href="../ods/ods13.html" title="ODS 13 - Acción por el clima"><span class="icon" aria-hidden="true">🌍</span><span>Acción por el clima</span></a>
+          <a class="ods-tile ods-14" href="../ods/ods14.html" title="ODS 14 - Vida submarina"><span class="icon" aria-hidden="true">🐠</span><span>Vida submarina</span></a>
+          <a class="ods-tile ods-15" href="../ods/ods15.html" title="ODS 15 - Vida de ecosistemas terrestres"><span class="icon" aria-hidden="true">🌳</span><span>Vida terrestre</span></a>
+          <a class="ods-tile ods-16" href="../ods/ods16.html" title="ODS 16 - Paz, justicia e instituciones sólidas"><span class="icon" aria-hidden="true">🕊️</span><span>Paz y justicia</span></a>
+          <a class="ods-tile ods-17" href="../ods/ods17.html" title="ODS 17 - Alianzas para lograr los objetivos"><span class="icon" aria-hidden="true">🔗</span><span>Alianzas</span></a>
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- Enlaces útiles en su propia tarjeta -->
+  <section id="enlaces" class="card constrained">
+    <div class="card-body">
+      <h2 id="enlaces-title">Enlaces útiles</h2>
+      <p class="links">Acceso al contenido completo y recursos externos:</p>
+      <ul>
+        <li><a href="https://www.un.org/sustainabledevelopment/es/" target="_blank" rel="noopener">Naciones Unidas — Objetivos de Desarrollo Sostenible</a></li>
+        <li><a href="https://sdgs.un.org/goals" target="_blank" rel="noopener">UN SDG Platform — Metas e indicadores</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">Página generada desde el documento interno <code>17 ODS</code>. Recursos y enlaces oficiales listados arriba.</div>
+  </footer>
+</body>
+</html>
