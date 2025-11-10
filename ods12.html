@@ -19,6 +19,12 @@
     ul{margin:6px 0 12px 1.2em;color:var(--muted)}
     p{color:var(--muted)}
     .back{display:inline-block;margin-top:12px;color:var(--accent);text-decoration:none}
+  /* Centered title with previous/next arrows */
+  .title-row{position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+  .title-row .nav-arrow{position:absolute;top:50%;transform:translateY(-50%);color:var(--accent);text-decoration:none;font-size:24px;padding:6px;border-radius:6px}
+  .title-row .nav-arrow:focus{outline:3px solid rgba(0,0,0,0.08);outline-offset:3px}
+  .title-row .nav-prev{left:12px}
+  .title-row .nav-next{right:12px}
   </style>
 </head>
 <body>
@@ -31,7 +37,11 @@
   </header>
   <main>
     <article class="card">
-  <h1><span class="title-icon" aria-hidden="true">♻️</span>Producción y consumo responsables</h1>
+  <div class="title-row">
+    <a class="nav-arrow nav-prev" href="ods11.html" aria-label="Anterior ODS">‹</a>
+    <h1><span class="title-icon" aria-hidden="true">♻️</span>Producción y consumo responsables</h1>
+    <a class="nav-arrow nav-next" href="ods13.html" aria-label="Siguiente ODS">›</a>
+  </div>
       <p>Breve descripción: Asegurar modalidades de consumo y producción sostenibles que reduzcan impactos ambientales y sociales.</p>
 
       <h2>Actividades individuales</h2>
